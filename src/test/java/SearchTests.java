@@ -6,10 +6,6 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class SearchTests {//Заголовок нашего скрипта /*не рекомендуется больше 50 тестов*/
 
-    static {
-        Configuration.pageLoadStrategy = "eager";
-    }
-
     @Test
     void successfulSearchTest(){    //Успешный поиск в браузере Google Chrome
 
