@@ -12,10 +12,11 @@ public class SearchTests {//Заголовок нашего скрипта /*н�
 
     @Test
     void successfulSearchTest(){    //Успешный поиск в браузере Google Chrome
-        //Configuration.holdBrowserOpen = true; //не дает закрыть тесту браузер
+
+        Configuration.holdBrowserOpen = true; //не дает закрыть тесту браузер
 
         open("https://www.google.com/");    /*Открывает гугл*/
         $("[name=q]").setValue("selenide").pressEnter();    /*Вводит в поисковую строку selenide*/
-        $("html").shouldHave(text("https://ru.selenide.org")); /*Проверяет, что selenide появился в рез-тах поиска [id=search] или html*/
+        $("[id=search]").shouldHave(text("https://ru.selenide.org")); /*Проверяет, что selenide появился в рез-тах поиска [id=search] или html*/
     }
 }
